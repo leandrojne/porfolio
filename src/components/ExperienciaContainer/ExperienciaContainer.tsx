@@ -20,7 +20,7 @@ const ExperienciaContainer: React.FC = () => {
                     <ItemExperiencia key={item.id} title={item.title_exp} description={item.description_exp} place={item.city_exp} date={item.dates_exp} />
                 ))
             ) : (
-                <p>Cargando datos...</p>
+                <div className="loader mb-7 -mt-6"></div>
             )}
         </section>
     );

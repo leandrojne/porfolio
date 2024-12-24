@@ -21,7 +21,7 @@ export default function ProyectosContainer() {
                     <ItemProyecto key={item.id} title_proyec={item.title_proyec} description_proyec={item.description_proyec} date_proyec={item.date_proyec} images_proyec={item.images_proyec} tags_proyec={item.tags_proyec} link_proyec={item.link_proyec} />
                 ))
             ) : (
-                <p>Cargando datos...</p>
+                <div className="loader mb-7 -mt-6"></div>
             )}
         </section>
     )

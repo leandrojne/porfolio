@@ -19,7 +19,7 @@ export default function CertificacionesContainer() {
                     <ItemCertif key={item.id} date={item.date_cert} title={item.title_cert} description={item.description_cert} place={item.city_cert} link={item.link_cert} />
                 ))
             ) : (
-                <p>Cargando datos...</p>
+                <div className="loader mb-7 -mt-6"></div>
             )}
         </section>
     )

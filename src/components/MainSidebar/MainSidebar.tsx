@@ -66,7 +66,7 @@ export default function MainSidebar() {
                 ))}
             </nav>
             <div className="md:max-w-[80%] min-[1280px]:max-w-[75%] flex content-center justify-center items-center flex-wrap">
-                <div className="img flex content-center items-center justify-center rounded-full h-[220px] w-[220px] xl:h-[300px] xl:w-[300px] bg-[#6cf5d7] border-[#1a1d22] border-[6px] overflow-hidden">
+                <div className="img flex content-center items-center justify-center rounded-full h-[220px] w-[220px] xl:h-[300px] xl:w-[300px] bg-dark-color] border-dark-color border-[6px] overflow-hidden">
                     <img src={imgLeandro} alt="" />
                 </div>
                 <div className="pt-5">
