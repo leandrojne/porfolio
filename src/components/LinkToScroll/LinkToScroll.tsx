@@ -7,7 +7,7 @@ interface linkProps {
 export default function LinkToScroll({ linkProp, nameProp, classActive }: linkProps) {
     const handleClickScroll = () => {
         const element = document.getElementById(linkProp);
-        console.log(`Elemento: ${element}`)
+
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }

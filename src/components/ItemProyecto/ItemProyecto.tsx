@@ -3,75 +3,6 @@ import Tag from "../Tag/Tag";
 import ImagesPopUp from "../ImagesPopUp/ImagesPopUp"
 import { useEffect, useState } from "react";
 
-// const infoProjects: InfoArray[] = [
-//     {
-//         title: 'Porfolio',
-//         date: '2024',
-//         description: 'Porfolio personal desarrollado para mostrar mis habilidades de Frontend, usando tecnologia de ultimo momento.',
-//         tag: ["react", "typescript", "tailwind", "json", "html"],
-//         imagenes: ImageProyect6,
-//         link: 'https://porfolio.idiomavisual.com',
-//     },
-//     {
-//         title: 'Registro de Tareas',
-//         date: '2024',
-//         description: `Este proyecto fue realizado para pracicar el desarrollo con React Js y el fetching data, tambien lo use para aprender a crear Api's usando Node Js y Express, configurando y creando una base de datos MySql en cPanel, todo fue realizado por mi para aprender.`,
-//         tag: ["react", "html", "less", "node", "mysql", "cpanel"],
-//         imagenes: ImageProyect2,
-//         link: 'https://tareas.idiomavisual.com',
-//     },
-//     {
-//         title: 'Custom eCommerce',
-//         date: '2024',
-//         description: 'Proyecto desarrollado para practicar y aprender React js. Se usa como estructura base Bootstrap y estilos personalizados implementando Less como procesador css. Se implementa Firebase como servicio Backend para obtener la autenticacion y registro de usuarios, Base de Datos de Productos, Informacion de Pedidos y Registro de informacion del Formulario de Contacto. se implemento el servicio de reCAPTCHA de google.',
-//         tag: ["html", "react", "bootstrap", "firebase", "less"],
-//         link: 'https://react.idiomavisual.com/',
-//         imagenes: ImageProyect1,
-//     },
-//     {
-//         title: 'Tienda Naranja Paraguay',
-//         date: '2024',
-//         description: 'Este es un proyecto de la empresa Solu, donde me contrataron para realizar toda la parte del FrontEnd, guiándome segun el diseño que proporcionó el cliente en Figma, este proyecto fue realizado en Magento 2, con Less como procesador de estilos CSS.',
-//         tag: ['magento', 'less', 'javascript', 'figma',],
-//         imagenes: ImageProyect4,
-//         link: 'https://tiendanaranja.com.py/',
-//     },
-//     {
-//         title: 'eCommerce First Gear',
-//         date: '2023',
-//         description: `Proyecto de la empresa 121 eCommerce LLC, implementación de toda la parte del Front segun el mockup enviado por el cliente. Proyecto realizado en Magento 2, con Less como procesador de estilos CSS.,`,
-//         tag: ['magento', 'less', 'javascript', 'figma',],
-//         imagenes: ImageProyect3,
-//         link: 'https://firstgearinc.com/',
-//     },
-//     {
-//         title: 'eCommerce Flodraulic',
-//         date: '2022',
-//         description: `Proyecto de la empresa 121 eCommerce LLC, donde me tocó implementar el Frontend donde solicitaban respetar el "PerfectPixel" del mockup. Proyecto realizado en Magento 2, con Less como procesador de estilos CSS.`,
-//         tag: ["magento", "less", "javascript", "figma"],
-//         imagenes: ImageProyect3,
-//         link: 'https://shop.flodraulic.com/',
-//     },
-//     {
-//         title: 'eCommerce Pinnacle',
-//         date: '2022',
-//         description: `Proyecto de la empresa 121 eCommerce LLC, donde me tocó implementar parte Frontend segun mockup. Proyecto realizado en Magento 2, con Less como procesador de estilos CSS.,`,
-//         tag: ['magento', 'less', 'javascript', 'figma',],
-//         imagenes: ImageProyect3,
-//         link: 'https://www.pinnaclepromotions.com/',
-//     },
-//     {
-//         title: 'Rizoma Deco',
-//         date: '2021',
-//         description: 'Website realizado de forma Freelance, donde que toma como base un template y se ajusta sengún los requerimientos del cliente',
-//         tag: ['wordpress', 'css', 'jquery',],
-//         imagenes: ImageProyect5,
-//         link: 'https://rizomadeco.com.ar/',
-//     }
-// ]
-
-
-
 interface propsInfo {
     title_proyec: string;
     description_proyec: string;
@@ -81,12 +12,8 @@ interface propsInfo {
     link_proyec?: string;
 }
 
-
 export default function ItemProyecto({ title_proyec, description_proyec, date_proyec, images_proyec, tags_proyec, link_proyec }: propsInfo) {
     const [dataArray, setDataArray] = useState<string[]>([]);
-    const parsedArray: string[] = JSON.parse(tags_proyec);
-    console.log(typeof parsedArray)
-
 
     useEffect(() => {
         const fetchData = async () => {
