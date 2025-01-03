@@ -46,11 +46,14 @@ export const InfoDataProvider: React.FC<InfoDataProviderProps> = ({ children }) 
     const [proyectosData, setProyectosData] = useState<ProyectosDataInfo[] | null>(null);
     const [loadingData, setLoadingData] = useState(false);
 
+    const fetchingUrl: string = 'https://porfolio.idiomavisual.com/porfolio_api/';
+    const requireHead: object = {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+    }
+
     useEffect(() => {
-        fetch('https://porfolio.idiomavisual.com/porfolio_api/experiencia', {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' }
-        })
+        fetch(`${fetchingUrl}experiencia`, requireHead)
             .then(response => response.json())
             .then((data) => {
 
@@ -60,10 +63,7 @@ export const InfoDataProvider: React.FC<InfoDataProviderProps> = ({ children }) 
                 throw error
             })
 
-        fetch('https://porfolio.idiomavisual.com/porfolio_api/certificaciones', {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' }
-        })
+        fetch(`${fetchingUrl}certificaciones`, requireHead)
             .then(response => response.json())
             .then((data) => {
                 setCertificacionesData(data)
@@ -72,10 +72,7 @@ export const InfoDataProvider: React.FC<InfoDataProviderProps> = ({ children }) 
                 throw error
             })
 
-        fetch('https://porfolio.idiomavisual.com/porfolio_api/proyectos', {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' }
-        })
+        fetch(`${fetchingUrl}proyectos`, requireHead)
             .then(response => response.json())
             .then((data) => {
                 setProyectosData(data)

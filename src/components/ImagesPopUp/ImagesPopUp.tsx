@@ -16,9 +16,11 @@ export default function ImagesPopUp({ thumbnailSrc, fullImageSrc, alt }: ImagePo
             <div className="image-popup-container">
                 {/* Miniatura */}
                 <img
+                    width='225'
+                    height='145'
                     src={thumbnailSrc}
                     alt={alt || 'Thumbnail'}
-                    className="thumbnail w-full h-auto"
+                    className="thumbnail w-full h-auto max-w-full"
                     onClick={openPopup}
                     style={{ cursor: 'pointer' }}
                 />
