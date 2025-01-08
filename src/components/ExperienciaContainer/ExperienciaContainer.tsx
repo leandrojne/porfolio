@@ -10,12 +10,14 @@ const ExperienciaContainer: React.FC = () => {
     if (!context) {
         return <p>Error: No se pudo cargar el contexto.</p>;
     }
-    const { experienciaData } = context;
+    const { experienciaData, loadingData, language } = context;
 
     return (
         <section id="experiencia" className="relative border-b mb-5 border-main-color">
-            <TitleSection title='Experiencia' />
-            {experienciaData ? (
+            {
+                (language === 'ES') ? <TitleSection title='Experiencia' /> : <TitleSection title='Experience' />
+            }
+            {experienciaData && !loadingData ? (
                 experienciaData.slice().reverse().map((item) => (
                     <ItemExperiencia key={item.id} title={item.title_exp} description={item.description_exp} place={item.city_exp} date={item.dates_exp} />
                 ))

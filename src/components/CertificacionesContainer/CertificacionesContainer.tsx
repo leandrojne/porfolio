@@ -9,11 +9,13 @@ export default function CertificacionesContainer() {
     if (!context) {
         return <p>Error: No se pudo cargar el contexto.</p>;
     }
-    const { certificacionesData } = context;
+    const { certificacionesData, language } = context;
 
     return (
         <section id="certificaciones" className="relative border-b mb-5 border-main-color">
-            <TitleSection title='Certificaciones' />
+            {
+                (language === 'ES') ? <TitleSection title='Certificaciones' /> : <TitleSection title='Certifications' />
+            }
             {certificacionesData ? (
                 certificacionesData.slice().reverse().map((item) => (
                     <ItemCertif key={item.id} date={item.date_cert} title={item.title_cert} description={item.description_cert} place={item.city_cert} link={item.link_cert} />
