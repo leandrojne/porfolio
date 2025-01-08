@@ -32,6 +32,8 @@ interface ExperienciaDataProps {
     proyectosData: ProyectosDataInfo[] | null;
     loadingData: boolean;
     setLoadingData: React.Dispatch<React.SetStateAction<boolean>>;
+    language: string;
+    setLanguage: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const InfoDataContext = createContext<ExperienciaDataProps | undefined>(undefined);
@@ -45,6 +47,7 @@ export const InfoDataProvider: React.FC<InfoDataProviderProps> = ({ children }) 
     const [certificacionesData, setCertificacionesData] = useState<CertificacionesDataInfo[] | null>(null);
     const [proyectosData, setProyectosData] = useState<ProyectosDataInfo[] | null>(null);
     const [loadingData, setLoadingData] = useState(false);
+    const [language, setLanguage] = useState('ES');
 
     const fetchingUrl: string = 'https://porfolio.idiomavisual.com/porfolio_api/';
     const requireHead: object = {
@@ -53,38 +56,166 @@ export const InfoDataProvider: React.FC<InfoDataProviderProps> = ({ children }) 
     }
 
     useEffect(() => {
-        fetch(`${fetchingUrl}experiencia`, requireHead)
-            .then(response => response.json())
-            .then((data) => {
+        if (language === 'ES') {
+            fetch(`${fetchingUrl}experiencia`, requireHead)
+                .then(response => response.json())
+                .then((data) => {
 
-                setExperienciaData(data)
-            })
-            .catch(error => {
-                throw error
-            })
+                    setExperienciaData(data)
+                })
+                .catch(error => {
+                    throw error
+                })
+                .finally(() => {
+                    setLoadingData(false)
+                })
 
-        fetch(`${fetchingUrl}certificaciones`, requireHead)
-            .then(response => response.json())
-            .then((data) => {
-                setCertificacionesData(data)
-            })
-            .catch(error => {
-                throw error
-            })
+            fetch(`${fetchingUrl}certificaciones`, requireHead)
+                .then(response => response.json())
+                .then((data) => {
+                    setCertificacionesData(data)
+                })
+                .catch(error => {
+                    throw error
+                })
+                .finally(() => {
+                    setLoadingData(false)
+                })
 
-        fetch(`${fetchingUrl}proyectos`, requireHead)
-            .then(response => response.json())
-            .then((data) => {
-                setProyectosData(data)
-            })
-            .catch(error => {
-                throw error
-            })
+            fetch(`${fetchingUrl}proyectos`, requireHead)
+                .then(response => response.json())
+                .then((data) => {
+                    setProyectosData(data)
+                })
+                .catch(error => {
+                    throw error
+                })
+                .finally(() => {
+                    setLoadingData(false)
+                })
+        }
+        if (language === 'EN') {
+            fetch(`${fetchingUrl}experiencia_en`, requireHead)
+                .then(response => response.json())
+                .then((data) => {
+
+                    setExperienciaData(data)
+                })
+                .catch(error => {
+                    throw error
+                })
+                .finally(() => {
+                    setLoadingData(false)
+                })
+
+            fetch(`${fetchingUrl}certificaciones_en`, requireHead)
+                .then(response => response.json())
+                .then((data) => {
+                    setCertificacionesData(data)
+                })
+                .catch(error => {
+                    throw error
+                })
+                .finally(() => {
+                    setLoadingData(false)
+                })
+
+            fetch(`${fetchingUrl}proyectos_en`, requireHead)
+                .then(response => response.json())
+                .then((data) => {
+                    setProyectosData(data)
+                })
+                .catch(error => {
+                    throw error
+                })
+                .finally(() => {
+                    setLoadingData(false)
+                })
+        }
 
     }, []);
 
+    useEffect(() => {
+        if (language === 'ES') {
+            fetch(`${fetchingUrl}experiencia`, requireHead)
+                .then(response => response.json())
+                .then((data) => {
+                    setExperienciaData(data)
+                })
+                .catch(error => {
+                    throw error
+                })
+                .finally(() => {
+                    setLoadingData(false)
+                })
+
+            fetch(`${fetchingUrl}certificaciones`, requireHead)
+                .then(response => response.json())
+                .then((data) => {
+                    setCertificacionesData(data)
+                })
+                .catch(error => {
+                    throw error
+                })
+                .finally(() => {
+                    setLoadingData(false)
+                })
+
+            fetch(`${fetchingUrl}proyectos`, requireHead)
+                .then(response => response.json())
+                .then((data) => {
+                    setProyectosData(data)
+                })
+                .catch(error => {
+                    throw error
+                })
+                .finally(() => {
+                    setLoadingData(false)
+                })
+        }
+        if (language === 'EN') {
+            fetch(`${fetchingUrl}experiencia_en`, requireHead)
+                .then(response => response.json())
+                .then((data) => {
+
+                    setExperienciaData(data)
+                })
+                .catch(error => {
+                    throw error
+                })
+                .finally(() => {
+                    setLoadingData(false)
+                })
+
+            fetch(`${fetchingUrl}certificaciones_en`, requireHead)
+                .then(response => response.json())
+                .then((data) => {
+                    setCertificacionesData(data)
+                })
+                .catch(error => {
+                    throw error
+                })
+                .finally(() => {
+                    setLoadingData(false)
+                })
+
+            fetch(`${fetchingUrl}proyectos_en`, requireHead)
+                .then(response => response.json())
+                .then((data) => {
+                    setProyectosData(data)
+                })
+                .catch(error => {
+                    throw error
+                })
+                .finally(() => {
+                    setLoadingData(false)
+                })
+        }
+
+    }, [language]);
+
     return (
-        <InfoDataContext.Provider value={{ experienciaData, loadingData, setLoadingData, certificacionesData, proyectosData }}>
+        <InfoDataContext.Provider value={{ experienciaData, loadingData, setLoadingData, certificacionesData, proyectosData, language, setLanguage }}>
             {children}
         </InfoDataContext.Provider>
     );

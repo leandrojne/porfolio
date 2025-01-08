@@ -10,12 +10,13 @@ export default function ProyectosContainer() {
     if (!context) {
         return <p>Error: No se pudo cargar el contexto.</p>;
     }
-    const { proyectosData } = context;
+    const { proyectosData, language } = context;
 
     return (
         <section id="proyectos" className="relative border-b mb-5 border-main-color">
-            <TitleSection title='Proyectos' />
-
+            {
+                (language === 'ES') ? <TitleSection title='Proyectos' /> : <TitleSection title='Projects' />
+            }
             {proyectosData ? (
                 proyectosData.slice().reverse().map((item) => (
                     <ItemProyecto key={item.id} title_proyec={item.title_proyec} description_proyec={item.description_proyec} date_proyec={item.date_proyec} images_proyec={item.images_proyec} tags_proyec={item.tags_proyec} link_proyec={item.link_proyec} />
