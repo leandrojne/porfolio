@@ -4,6 +4,7 @@ import Tag from "../Tag/Tag.tsx";
 import imgLeandro from '../../assets/images/Leandro.jpg'
 import LaguajeButton from "../LanguageButton/LanguageButton.tsx";
 import { InfoDataContext } from "../../context/FetchingData.tsx";
+import LinkCv from "../LinkCv/LinkCv.tsx";
 
 interface Section {
     id: string;
@@ -99,6 +100,7 @@ export default function MainSidebar() {
                 }
             </nav>
             <div className="md:max-w-[80%] min-[1280px]:max-w-[75%] flex content-center justify-center items-center flex-wrap">
+                <LinkCv />
                 <div className="img flex content-center items-center justify-center rounded-full h-[220px] w-[220px] xl:h-[300px] xl:w-[300px] bg-dark-color] border-dark-color border-[6px] overflow-hidden">
                     <img src={imgLeandro} alt="Porfolio ~ Leandro Nuñez" width='290' height='290' />
                 </div>
