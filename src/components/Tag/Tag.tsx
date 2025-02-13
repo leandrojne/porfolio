@@ -18,6 +18,8 @@ import Sass from "../Icons/svg/SassSVG.tsx";
 import Nodejs from "../Icons/svg/NodeSVG.tsx";
 import MySQL from "../Icons/svg/MysqlSVG.tsx";
 import CpanelSVG from "../Icons/svg/CpanelSVG.tsx";
+import WooCommerce from "../Icons/svg/WoocommerceSVG.tsx";
+import Php from "../Icons/svg/PhpSVG.tsx";
 
 
 interface propsTag {
@@ -204,6 +206,24 @@ export default function Tag({ text, bgColor }: propsTag) {
                         <Wordpress />
                     </span>
                     Wordpress
+                </div>
+            );
+        case "woocommerce":
+            return (
+                <div className={`group text-white flex justify-center items-center text-xs pl-1 pr-4 my-1 mr-2 py-[6px] h-[28px] rounded-full  w-max leading-none ${bgColor ? bgColor : 'bg-main-color'}`}>
+                    <span className="ml-2 mr-[5px] mt-[-2px] text-[16px] aspect-auto">
+                        <WooCommerce />
+                    </span>
+                    WooCommerce
+                </div>
+            );
+        case "php":
+            return (
+                <div className={`group text-white flex justify-center items-center text-xs pl-1 pr-4 my-1 mr-2 py-[6px] h-[28px] rounded-full  w-max leading-none ${bgColor ? bgColor : 'bg-main-color'}`}>
+                    <span className="ml-2 mr-[5px] mt-[-2px] text-[16px] aspect-auto">
+                        <Php />
+                    </span>
+                    PHP
                 </div>
             );
         default:
