@@ -41,7 +41,7 @@ const infoLeandro: InfoLean = {
     description2: (<> <span className='text-secondary-color'>+ de 6 años</span> como desarrollor <span className='text-secondary-color'>Magento Frontend</span>.</>),
     description3: (<> <span className='text-secondary-color'>Junior</span> como desarrollor <span className='text-secondary-color'>ReactJs</span> & <span className='text-secondary-color'>JavaScript</span>.</>),
     description4: (<> Proactivo, responsable y creativo. Altamente capacitado para presentar soluciones inmediatas a problemas gráficos y sitios web, excelente relación profesional y personal.</>),
-    tag: ['adobe', 'magento', 'html', 'css', 'react', 'javascript', 'jquery', 'less', 'sass', 'bootstrap', 'firebase', 'figma', 'git', 'typescript', 'wordpress', 'tailwind', 'json', 'mysql', 'node', 'cpanel'],
+    tag: ['adobe', 'magento', 'html', 'css', 'react', 'javascript', 'jquery', 'less', 'sass', 'bootstrap', 'tailwind', 'firebase', 'figma', 'git', 'typescript', 'wordpress', 'woocommerce', 'json', 'php', 'mysql', 'node', 'cpanel'],
 }
 
 const infoLeandroEN: InfoLean = {
@@ -50,7 +50,7 @@ const infoLeandroEN: InfoLean = {
     description2: (<> <span className='text-secondary-color'>+ 6 Years</span> as a <span className='text-secondary-color'>Magento Frontend</span> Developer.</>),
     description3: (<> <span className='text-secondary-color'>Junior</span> as a <span className='text-secondary-color'>ReactJs</span> & <span className='text-secondary-color'>JavaScript</span> Developer.</>),
     description4: (<> Proactive, responsible and creative.Highly trained to present immediate solutions to graphic and website problems, excellent professional and personal relationship..</>),
-    tag: ['adobe', 'magento', 'html', 'css', 'react', 'javascript', 'jquery', 'less', 'sass', 'bootstrap', 'firebase', 'figma', 'git', 'typescript', 'wordpress', 'tailwind', 'json', 'mysql', 'node', 'cpanel'],
+    tag: ['adobe', 'magento', 'html', 'css', 'react', 'javascript', 'jquery', 'less', 'sass', 'bootstrap', 'tailwind', 'firebase', 'figma', 'git', 'typescript', 'wordpress', 'woocommerce', 'json', 'php', 'mysql', 'node', 'cpanel'],
 }
 
 
@@ -105,7 +105,7 @@ export default function MainSidebar() {
                     <img src={imgLeandro} alt="Porfolio ~ Leandro Nuñez" width='290' height='290' />
                 </div>
                 <div className="pt-5">
-                    <h1 className="text-white font-semibold text-3xl md:text-4xl xl:text-5xl mb-4 ">{infoLeandro.title}</h1>
+                    <h1 className="mb-4 text-3xl font-semibold text-white md:text-4xl xl:text-5xl ">{infoLeandro.title}</h1>
                     <div className='*:text-pretty *:font-medium *:text-white *:text-sm *:eading-6 *:md:text-[16px] *:xl:text-[18px] *:md:leading-6 *:xl:leading-7 *:mb-1 mb-4'>
                         <p>
                             {
@@ -145,7 +145,7 @@ export default function MainSidebar() {
                     }
 
                 </div>
-                <div className='links flex justify-center items-center flex-wrap'>
+                <div className='flex flex-wrap items-center justify-center links'>
                     {
                         infoLeandro.tag.map((item, idx) => {
                             return <Tag text={item} key={idx} bgColor={'bg-dark-color'} />
