@@ -38,8 +38,8 @@ interface InfoLean {
 const infoLeandro: InfoLean = {
     title: 'Leandro J. Nuñez E.',
     description: (<> <span className='text-secondary-color'>+ de 15 años</span> de experiencia en <span className='text-secondary-color'>Diseño Gráfico</span>.</>),
-    description2: (<> <span className='text-secondary-color'>+ de 6 años</span> como desarrollor <span className='text-secondary-color'>Magento Frontend</span>.</>),
-    description3: (<> <span className='text-secondary-color'>Junior</span> como desarrollor <span className='text-secondary-color'>ReactJs</span> & <span className='text-secondary-color'>JavaScript</span>.</>),
+    description2: (<> <span className='text-secondary-color'>+ de 6 años</span> como desarrollador <span className='text-secondary-color'>Magento Frontend</span>.</>),
+    description3: (<> <span className='text-secondary-color'>Junior</span> como desarrollador <span className='text-secondary-color'>ReactJs</span> & <span className='text-secondary-color'>JavaScript</span>.</>),
     description4: (<> Proactivo, responsable y creativo. Altamente capacitado para presentar soluciones inmediatas a problemas gráficos y sitios web, excelente relación profesional y personal.</>),
     tag: ['adobe', 'magento', 'html', 'css', 'react', 'javascript', 'jquery', 'less', 'sass', 'bootstrap', 'tailwind', 'firebase', 'figma', 'git', 'typescript', 'wordpress', 'woocommerce', 'json', 'php', 'mysql', 'node', 'cpanel'],
 }
